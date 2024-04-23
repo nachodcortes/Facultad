@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="nacho_ny4lh0o"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-04-22 09:04:16 a.&#160;m."/>
+        <attribute name="created" value="bmFjaG9fbnk0bGgwbztMQVBUT1AtMTlJSUQ5N0I7MjAyNC0wNC0yMjswODo0MToyMiBhLsKgbS47Mzg1NQ=="/>
+        <attribute name="edited" value="bmFjaG9fbnk0bGgwbztMQVBUT1AtMTlJSUQ5N0I7MjAyNC0wNC0yMjswOTowNDoxNiBhLsKgbS47MjszOTY3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero" type="Integer" array="False" size=""/>
+            <declare name="cont" type="Integer" array="False" size=""/>
+            <assign variable="cont" expression="1"/>
+            <output expression="&quot;Ingrese un numero mayor a 1: &quot;" newline="True"/>
+            <input variable="numero"/>
+            <while expression="numero &lt; 1">
+                <output expression="&quot;El numero es menor que uno y no se puede realizar el programa, ingrse devuelta un numero mayor a 1: &quot;" newline="True"/>
+                <input variable="numero"/>
+            </while>
+            <while expression="cont &lt;= numero">
+                <if expression="cont % 3 == 0 or cont % 10 == 3">
+                    <then>
+                        <if expression="cont % 7 == 0 and cont % 3 == 0">
+                            <then>
+                                <output expression="&quot;AMBOS!&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;TRES!&quot;" newline="True"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <if expression="cont % 7 == 0 or cont % 10 == 7">
+                            <then>
+                                <output expression="&quot;SIETE!&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <output expression="cont" newline="True"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <assign variable="cont" expression="cont + 1"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

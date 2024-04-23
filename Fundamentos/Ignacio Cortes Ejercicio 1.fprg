@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="nacho_ny4lh0o"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-04-22 08:40:41 a.&#160;m."/>
+        <attribute name="created" value="bmFjaG9fbnk0bGgwbztMQVBUT1AtMTlJSUQ5N0I7MjAyNC0wNC0yMjswNzo1OTo1OCBhLsKgbS47Mzg3Mg=="/>
+        <attribute name="edited" value="bmFjaG9fbnk0bGgwbztMQVBUT1AtMTlJSUQ5N0I7MjAyNC0wNC0yMjswODo0MDo0MSBhLsKgbS47NDszOTY2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="metros" type="Integer" array="False" size=""/>
+            <declare name="talle" type="Integer" array="False" size=""/>
+            <declare name="cantCamperas" type="Integer" array="False" size=""/>
+            <assign variable="cantCamperas" expression="0"/>
+            <declare name="telaSobranteTalleUno" type="Integer" array="False" size=""/>
+            <assign variable="telaSobranteTalleUno" expression="0"/>
+            <declare name="telaSobranteTalleDos" type="Integer" array="False" size=""/>
+            <assign variable="telaSobranteTalleDos" expression="0"/>
+            <declare name="telaSobranteTalleTres" type="Integer" array="False" size=""/>
+            <assign variable="telaSobranteTalleTres" expression="0"/>
+            <declare name="telaSobrante" type="Integer" array="False" size=""/>
+            <assign variable="telaSobrante" expression="0"/>
+            <output expression="&quot;Ingrese la cantidad de tela en metros que quiere utilizar para fabricar camperas: &quot;" newline="True"/>
+            <input variable="metros"/>
+            <while expression="metros &lt; 0">
+                <output expression="&quot;El numero ingresado es invalido, ingrese un numero valido para la cantidad de tela en metros que quiere utlizar para fabricar camperas: &quot;" newline="True"/>
+                <input variable="metros"/>
+            </while>
+            <assign variable="telaSobranteTalleUno" expression="metros % 120"/>
+            <assign variable="telaSobranteTalleDos" expression="metros % 210"/>
+            <assign variable="telaSobranteTalleTres" expression="metros % 280"/>
+            <if expression="telaSobranteTalleUno &lt;= telaSobranteTalleDos and telaSobranteTalleUno &lt;= telaSobranteTalleTres">
+                <then>
+                    <assign variable="cantCamperas" expression="metros / 120"/>
+                    <assign variable="talle" expression="1"/>
+                    <assign variable="telaSobrante" expression="telaSobranteTalleUno"/>
+                </then>
+                <else>
+                    <if expression="telaSobranteTalleDos &lt;= telaSobranteTalleTres">
+                        <then>
+                            <assign variable="cantCamperas" expression="metros / 210"/>
+                            <assign variable="talle" expression="2"/>
+                            <assign variable="telaSobrante" expression="telaSobranteTalleDos"/>
+                        </then>
+                        <else>
+                            <assign variable="cantCamperas" expression="metros / 280"/>
+                            <assign variable="talle" expression="3"/>
+                            <assign variable="telaSobrante" expression="telaSobranteTalleTres"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;El talle elegido es &quot; &amp; talle &amp; &quot;, con este talle se pueden fabricar &quot; &amp; cantCamperas &amp; &quot; camperas y la cantidad de tela sobrante es &quot; &amp; telaSobrante" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
