@@ -1,4 +1,4 @@
-def ordenar_lista(legajos, notas):
+def ordenar_lista(legajos, notas): 
     desordenada = True
     while desordenada:
         desordenada = False
